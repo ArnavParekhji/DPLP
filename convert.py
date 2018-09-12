@@ -13,12 +13,14 @@ def extract(fxml):
     fconll = fxml.replace(".xml", ".conll")
     writer(sentlist, fconll)
 
-
 def main(rpath):
     files = [join(rpath,fname) for fname in listdir(rpath) if fname.endswith(".xml")]
-    for fxml in files:
-        print 'Processing file: {}'.format(fxml)
-        extract(fxml)
+    cnt = 10
+    import multiprocessing
+    pool = multiprocessing.Pool(processes=cnt)
+    pool.map(extract, files)
+    pool.close()
+    pool.join()
 
 
 if __name__ == '__main__':
