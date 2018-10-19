@@ -2,7 +2,7 @@
 ## Author: Yangfeng Ji
 ## Date: 02-10-2015
 ## Time-stamp: <yangfeng 09/25/2015 23:43:17>
-
+import multiprocessing
 from preprocess.xmlreader import reader, writer, combine
 from os import listdir
 from os.path import join
@@ -15,8 +15,8 @@ def extract(fxml):
 
 def main(rpath):
     files = [join(rpath,fname) for fname in listdir(rpath) if fname.endswith(".xml")]
-    cnt = 10
-    import multiprocessing
+    cnt = multiprocessing.cpu_count()
+    
     pool = multiprocessing.Pool(processes=cnt)
     pool.map(extract, files)
     pool.close()
