@@ -19,5 +19,5 @@ if __name__ == '__main__':
         writepath = argv[2]
         main(readpath, writepath)
     else:
-        print "python segmenter.py read_path [write_path]"
-        print "\tread_path - the document folder"
+        print("python segmenter.py read_path [write_path]")
+        print("\tread_path - the document folder")

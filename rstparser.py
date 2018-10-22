@@ -9,7 +9,7 @@ import gzip, sys
 
 def main(path, draw=True):
     with gzip.open("resources/bc3200.pickle.gz") as fin:
-        print 'Load Brown clusters for creating features ...'
+        print('Load Brown clusters for creating features ...')
         bcvocab = load(fin)
     evalparser(path=path, report=False, draw=draw,
                bcvocab=bcvocab,
@@ -19,14 +19,14 @@ def main(path, draw=True):
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         path = sys.argv[1]
-        print 'Read files from: {}'.format(path)
+        print('Read files from: {}'.format(path))
         main(path)
     elif len(sys.argv) == 3:
         path = sys.argv[1]
         draw = eval(sys.argv[2])
-        print 'Read files from {}'.format(path)
+        print('Read files from {}'.format(path))
         main(path, draw)
     else:
-        print "Usage: python rstparser.py file_path [draw_rst_tree]"
+        print("Usage: python rstparser.py file_path [draw_rst_tree]")
         print "\tfile_path - path to the segmented file"
 

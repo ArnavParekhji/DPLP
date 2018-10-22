@@ -10,6 +10,10 @@ from evaluation import Metrics
 from os import listdir
 from os.path import join as joinpath
 from util import drawrst
+import multiprocessing
+
+global_pm = None
+global_bv = None
 
 
 def parse(pm, doc):
@@ -28,13 +32,40 @@ def parse(pm, doc):
 def writebrackets(fname, brackets):
     """ Write the bracketing results into file
     """
-    print 'Writing parsing results into file: {}'.format(fname)
+    print('Writing parsing results into file: {}'.format(fname))
     with open(fname, 'w') as fout:
         for item in brackets:
             fout.write(str(item) + '\n')
 
 
-def evalparser(path='./examples', report=False, 
+def eval_parser_unit(fmerge, bcvocab=global_bv, pm=global_pm, draw=False):
+    assert bcvocab is not None
+    assert pm is not None
+    dr = DocReader()
+    doc = dr.read(fmerge)
+    # ----------------------------------------
+    # Parsing
+    pred_rst = pm.sr_parse(doc, bcvocab)
+    if draw:
+        strtree = pred_rst.parse()
+        drawrst(strtree, fmerge.replace(".merge", ".ps"))
+    # Get brackets from parsing results
+    pred_brackets = pred_rst.bracketing()
+    fbrackets = fmerge.replace('.merge', '.brackets')
+    # Write brackets into file
+    writebrackets(fbrackets, pred_brackets)
+    # ----------------------------------------
+    # Evaluate with gold RST tree
+    # if report:
+    #     fdis = fmerge.replace('.merge', '.dis')
+    #     gold_rst = RSTTree(fdis, fmerge)
+    #     gold_rst.build()
+    #     gold_brackets = gold_rst.bracketing()
+    #     met = Metrics(levels=['span', 'nuclearity', 'relation'])
+    #     met.eval(gold_rst, pred_rst)
+
+
+def evalparser(path='./examples', report=False,
                bcvocab=None, draw=True,
                withdp=False, fdpvocab=None, fprojmat=None):
     """ Test the parsing performance
@@ -47,16 +78,25 @@ def evalparser(path='./examples', report=False,
     """
     # ----------------------------------------
     # Load the parsing model
-    print 'Load parsing model ...'
+    print('Load parsing model ...')
     pm = ParsingModel(withdp=withdp,
-        fdpvocab=fdpvocab, fprojmat=fprojmat)
+                      fdpvocab=fdpvocab, fprojmat=fprojmat)
     pm.loadmodel("model/parsing-model.pickle.gz")
     # ----------------------------------------
     # Evaluation
-    met = Metrics(levels=['span','nuclearity','relation'])
+    met = Metrics(levels=['span', 'nuclearity', 'relation'])
     # ----------------------------------------
     # Read all files from the given path
     doclist = [joinpath(path, fname) for fname in listdir(path) if fname.endswith('.merge')]
+    global_pm = pm
+    global_bv = bcvocab
+    cnt = multiprocessing.cpu_count()
+
+    pool = multiprocessing.Pool(processes=cnt)
+    pool.starmap(eval_parser_unit, doclist)
+    pool.close()
+    pool.join()
+    """
     for fmerge in doclist:
         # ----------------------------------------
         # Read *.merge file
@@ -67,7 +107,7 @@ def evalparser(path='./examples', report=False,
         pred_rst = pm.sr_parse(doc, bcvocab)
         if draw:
             strtree = pred_rst.parse()
-            drawrst(strtree, fmerge.replace(".merge",".ps"))
+            drawrst(strtree, fmerge.replace(".merge", ".ps"))
         # Get brackets from parsing results
         pred_brackets = pred_rst.bracketing()
         fbrackets = fmerge.replace('.merge', '.brackets')
@@ -83,3 +123,4 @@ def evalparser(path='./examples', report=False,
             met.eval(gold_rst, pred_rst)
     if report:
         met.report()
+    """
