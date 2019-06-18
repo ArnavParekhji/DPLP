@@ -38,7 +38,9 @@ def writebrackets(fname, brackets):
             fout.write(str(item) + '\n')
 
 
-def eval_parser_unit(fmerge, bcvocab=global_bv, pm=global_pm, draw=False):
+def eval_parser_unit(fmerge, bcvocab=None, pm=None, draw=False):
+    bcvocab = global_bv
+    pm = global_pm
     assert bcvocab is not None
     assert pm is not None
     dr = DocReader()
@@ -89,11 +91,13 @@ def evalparser(path='./examples', report=False,
     # Read all files from the given path
     doclist = [joinpath(path, fname) for fname in listdir(path) if fname.endswith('.merge')]
     global_pm = pm
+    global global_pm
     global_bv = bcvocab
+    global global_bv
     cnt = multiprocessing.cpu_count()
 
     pool = multiprocessing.Pool(processes=cnt)
-    pool.starmap(eval_parser_unit, doclist)
+    pool.map(eval_parser_unit, doclist)
     pool.close()
     pool.join()
     """
