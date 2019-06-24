@@ -2,6 +2,14 @@
 
 ## 1. Required Package ##
 
+
+```bash
+wget https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
+sh Anaconda2-2019.03-Linux-x86_64.sh
+/home/intern/anaconda2/bin/pip install sklearn 
+
+```
+
 scipy, numpy, sklearn, nltk, python-tk 
 
 The last two packages are required to draw the RST tree structure in the PostScript format. It is highly recommended to install these two packages for visualization. Otherwise, you have to read the bracketing results and to imagine what the tree looks like :-)

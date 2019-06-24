@@ -7,16 +7,18 @@ from preprocess.xmlreader import reader, writer, combine
 from os import listdir
 from os.path import join
 
+
 def extract(fxml):
     sentlist, constlist = reader(fxml)
     sentlist = combine(sentlist, constlist)
     fconll = fxml.replace(".xml", ".conll")
     writer(sentlist, fconll)
 
+
 def main(rpath):
-    files = [join(rpath,fname) for fname in listdir(rpath) if fname.endswith(".xml")]
+    files = [join(rpath, fname) for fname in listdir(rpath) if fname.endswith(".xml")]
     cnt = multiprocessing.cpu_count()
-    
+
     pool = multiprocessing.Pool(processes=cnt)
     pool.map(extract, files)
     pool.close()
@@ -25,7 +27,8 @@ def main(rpath):
 
 if __name__ == '__main__':
     import sys
+    print("sys.argv[1] is the path")
     if len(sys.argv) == 2:
         main(rpath=sys.argv[1])
     else:
-        print "python convert.py data_path"
+        print('python convert.py data_path')
