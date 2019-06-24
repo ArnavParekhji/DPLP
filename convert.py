@@ -3,7 +3,7 @@
 ## Date: 02-10-2015
 ## Time-stamp: <yangfeng 09/25/2015 23:43:17>
 import multiprocessing
-from .preprocess.xmlreader import reader, writer, combine
+from preprocess.xmlreader import  reader, writer, combine
 from os import listdir
 from os.path import join
 
