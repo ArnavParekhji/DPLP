@@ -3,6 +3,8 @@
 ## Date: 11-05-2014
 ## Time-stamp: <yangfeng 09/25/2015 16:32:42>
 
+# modified by Jiacheng Xu
+
 from model import ParsingModel
 from tree import RSTTree
 from docreader import DocReader
@@ -94,9 +96,11 @@ def evalparser(path='./examples', report=False,
     global global_pm
     global_bv = bcvocab
     global global_bv
+    eval_parser_unit(doclist[0])
     cnt = multiprocessing.cpu_count()
 
     pool = multiprocessing.Pool(processes=cnt)
+
     pool.map(eval_parser_unit, doclist)
     pool.close()
     pool.join()

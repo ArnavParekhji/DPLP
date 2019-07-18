@@ -6,6 +6,7 @@
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda2-2019.03-Linux-x86_64.sh
 sh Anaconda2-2019.03-Linux-x86_64.sh
+pip2 install sklearn
 /home/intern/anaconda2/bin/pip install sklearn 
 
 ```
