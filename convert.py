@@ -3,7 +3,7 @@
 ## Date: 02-10-2015
 ## Time-stamp: <yangfeng 09/25/2015 23:43:17>
 import multiprocessing
-from preprocess.xmlreader import  reader, writer, combine
+from preprocess.xmlreader import reader, writer, combine
 from os import listdir
 from os.path import join
 
@@ -17,11 +17,11 @@ def extract(fxml):
 
 def main(rpath):
     exsisting_files = [join(rpath, fname) for fname in listdir(rpath) if fname.endswith(".conll")]
-    exsisting_files_prefix = [x.split('.')[:-1] for x in exsisting_files]
+    exsisting_files_prefix = [".".join(x.split('.')[:-1]) for x in exsisting_files]
     all_files = [join(rpath, fname) for fname in listdir(rpath) if fname.endswith(".xml")]
-    all_files_prefix = [x.split('.')[:-1] for x in all_files]
+    all_files_prefix = [".".join(x.split('.')[:-1]) for x in all_files]
     todo_files = list(set(all_files_prefix) - set(exsisting_files_prefix))
-    files = todo_files
+    files = [ x+'.xml'  for x in todo_files]
     print("Len of files todo {}".format(len(files)))
     cnt = multiprocessing.cpu_count()
 
@@ -33,6 +33,7 @@ def main(rpath):
 
 if __name__ == '__main__':
     import sys
+
     print("sys.argv[1] is the path")
     if len(sys.argv) == 2:
         main(rpath=sys.argv[1])
