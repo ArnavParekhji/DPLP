@@ -21,7 +21,7 @@ def main(rpath):
     all_files = [join(rpath, fname) for fname in listdir(rpath) if fname.endswith(".xml")]
     all_files_prefix = [".".join(x.split('.')[:-1]) for x in all_files]
     todo_files = list(set(all_files_prefix) - set(exsisting_files_prefix))
-    files = [ x+'.xml'  for x in todo_files]
+    files = [x + '.xml' for x in todo_files]
     print("Len of files todo {}".format(len(files)))
     cnt = multiprocessing.cpu_count()
 
