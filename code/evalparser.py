@@ -91,8 +91,8 @@ def evalparser(path='./examples', report=False,
     met = Metrics(levels=['span', 'nuclearity', 'relation'])
     # ----------------------------------------
     # Read all files from the given path
-    exsisting_files = [fname.split(".")[:-1] for fname in listdir(path) if fname.endswith('.brackets')]
-    all_files = [fname.split(".")[:-1] for fname in listdir(path) if fname.endswith('.merge')]
+    exsisting_files = [ ".".join(  fname.split(".")[:-1]) for fname in listdir(path) if fname.endswith('.brackets')]
+    all_files = [ ".".join(fname.split(".")[:-1])  for fname in listdir(path) if fname.endswith('.merge')]
     todo_files = list(set(all_files) - set(exsisting_files))
     doclist = [joinpath(path, fname + '.merge') for fname in todo_files]
     print("TODO files len:")
