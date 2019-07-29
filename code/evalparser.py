@@ -97,6 +97,7 @@ def evalparser(path='./examples', report=False,
     doclist = [joinpath(path, fname + '.merge') for fname in todo_files]
     print("TODO files len:")
     print(len(doclist))
+    print(doclist[0])
     global_pm = pm
     global global_pm
     global_bv = bcvocab
