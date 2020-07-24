@@ -3,8 +3,8 @@
 ## Date: 05-02-2015
 ## Time-stamp: <yangfeng 09/25/2015 15:18:23>
 
-from datastruct import *
-from util import isnumber
+from discoseg.model.datastruct import *
+from discoseg.model.util import isnumber
 
 """ Read *.merge file
 """

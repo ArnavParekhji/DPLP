@@ -5,13 +5,13 @@
 
 # modified by Jiacheng Xu
 
-from model import ParsingModel
-from tree import RSTTree
-from docreader import DocReader
-from evaluation import Metrics
+from code.model import ParsingModel
+from code.tree import RSTTree
+from code.docreader import DocReader
+from code.evaluation import Metrics
 from os import listdir
 from os.path import join as joinpath
-from util import drawrst
+from code.util import drawrst
 import multiprocessing
 
 global_pm = None
@@ -98,18 +98,20 @@ def evalparser(path='./examples', report=False,
     print("TODO files len:")
     print(len(doclist))
     print(doclist[0])
-    global_pm = pm
     global global_pm
-    global_bv = bcvocab
+    global_pm = pm 
     global global_bv
-    eval_parser_unit(doclist[0])
-    cnt = multiprocessing.cpu_count()
+    global_bv = bcvocab
+    # eval_parser_unit(doclist[0])
+    for d in doclist:
+        eval_parser_unit(d, bcvocab, pm, True)
+    # cnt = multiprocessing.cpu_count()
 
-    pool = multiprocessing.Pool(processes=cnt)
+    # pool = multiprocessing.Pool(processes=cnt)
 
-    pool.map(eval_parser_unit, doclist)
-    pool.close()
-    pool.join()
+    # pool.map(eval_parser_unit, doclist)
+    # pool.close()
+    # pool.join()
     """
     for fmerge in doclist:
         # ----------------------------------------

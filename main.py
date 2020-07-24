@@ -8,7 +8,8 @@ from code.data import Data
 from code.model import ParsingModel
 from code.util import reversedict
 from code.evalparser import evalparser
-from cPickle import load
+# from cPickle import load
+from _pickle import load
 import gzip
 
 WITHDP = False

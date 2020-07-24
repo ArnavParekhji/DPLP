@@ -10,18 +10,19 @@
 """
 
 from sklearn.svm import LinearSVC
-from cPickle import load, dump
-from parser import SRParser
-from feature import FeatureGenerator
-from tree import RSTTree
-from util import *
-from datastructure import ActionError
+# from cPickle import load, dump
+from _pickle import load, dump
+from code.parser import SRParser
+from code.feature import FeatureGenerator
+from code.tree import RSTTree
+from code.util import *
+# import code.util as util
+from code.datastructure import ActionError
 from operator import itemgetter
 import gzip, sys
 
 class ParsingModel(object):
-    def __init__(self, vocab=None, idxlabelmap=None, clf=None,
-                 withdp=None, fdpvocab=None, fprojmat=None):
+    def __init__(self, vocab=None, idxlabelmap=None, clf=None, withdp=None, fdpvocab=None, fprojmat=None):
         """ Initialization
         
         :type vocab:
@@ -44,18 +45,18 @@ class ParsingModel(object):
         self.withdp = withdp
         self.dpvocab, self.projmat = None, None
         if withdp:
-            print 'Loading projection matrix ...'
+            print('Loading projection matrix ...')
             with gzip.open(fdpvocab) as fin:
                 self.dpvocab = load(fin)
             with gzip.open(fprojmat) as fin:
                 self.projmat = load(fin)
-        print 'Finish initializing ParsingModel'
+        print('Finish initializing ParsingModel')
 
 
     def train(self, trnM, trnL):
         """ Perform batch-learning on parsing model
         """
-        print 'Training ...'
+        print('Training ...')
         self.clf.fit(trnM, trnL)
 
 
@@ -101,18 +102,19 @@ class ParsingModel(object):
              'idxlabelmap':self.labelmap}
         with gzip.open(fname, 'w') as fout:
             dump(D, fout)
-        print 'Save model into file: {}'.format(fname)
+        print('Save model into file: {}'.format(fname))
 
 
     def loadmodel(self, fname):
         """ Load model
         """
         with gzip.open(fname, 'r') as fin:
-            D = load(fin)
+        # with open(fname, 'rb') as fin:
+            D = load(fin, encoding="latin1")
         self.clf = D['clf']
         self.vocab = D['vocab']
         self.labelmap = D['idxlabelmap']
-        print 'Load model from file: {}'.format(fname)
+        print('Load model from file: {}'.format(fname))
 
 
     def sr_parse(self, doc, bcvocab=None):

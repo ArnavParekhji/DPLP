@@ -11,8 +11,8 @@
 - YJ
 """
 
-from datastructure import *
-from util import *
+from code.datastructure import *
+from code.util import *
 
 class SRParser:
     """ It shouldn't be a sub-class of 'object',

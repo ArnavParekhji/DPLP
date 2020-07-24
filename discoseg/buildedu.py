@@ -5,10 +5,11 @@
 
 from os import listdir
 from os.path import join, basename
-from model.classifier import Classifier
-from model.docreader import DocReader
-from model.sample import SampleGenerator
-from cPickle import load
+from discoseg.model.classifier import Classifier
+from discoseg.model.docreader import DocReader
+from discoseg.model.sample import SampleGenerator
+# from cPickle import load
+from pickle import load
 import gzip
 
 
@@ -19,7 +20,7 @@ def main(fmodel, fvocab, rpath, wpath):
     flist = [join(rpath,fname) for fname in listdir(rpath) if fname.endswith('conll')]
     vocab = load(gzip.open(fvocab))
     for (fidx, fname) in enumerate(flist):
-        print "Processing file: {}".format(fname)
+        print("Processing file: {}".format(fname))
         doc = dr.read(fname, withboundary=False)
         sg = SampleGenerator(vocab)
         sg.build(doc)
@@ -33,7 +34,7 @@ def postprocess(doc, predlabels):
     """ Assign predlabels into doc
     """
     tokendict = doc.tokendict
-    for gidx in tokendict.iterkeys():
+    for gidx in tokendict.keys():
         if predlabels[gidx] == 1:
             tokendict[gidx].boundary = True
         else:

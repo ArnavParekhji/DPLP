@@ -1,0 +1,192 @@
+0	1	b'A'	b'a'	b'DT'	det	4	b'O'	b' (ROOT (S (PRN (S (NP (DT A)'	1
+0	2	b'New'	b'New'	b'NNP'	compound	3	b'STATE_OR_PROVINCE'	b' (NML (NNP New)'	1
+0	3	b'Jersey'	b'Jersey'	b'NNP'	compound	4	b'STATE_OR_PROVINCE'	b' (NNP Jersey))'	1
+0	4	b'man'	b'man'	b'NN'	nsubj	5	b'O'	b' (NN man))'	1
+0	5	b'died'	b'die'	b'VBD'	parataxis	76	b'O'	b' (VP (VBD died)'	1
+0	6	b'at'	b'at'	b'IN'	case	8	b'O'	b' (PP (IN at)'	1
+0	7	b'a'	b'a'	b'DT'	det	8	b'O'	b' (NP (NP (DT a)'	1
+0	8	b'hotel'	b'hotel'	b'NN'	obl	5	b'O'	b' (NN hotel))'	1
+0	9	b'in'	b'in'	b'IN'	case	12	b'O'	b' (PP (IN in)'	1
+0	10	b'the'	b'the'	b'DT'	det	12	b'O'	b' (NP (DT the)'	1
+0	11	b'Dominican'	b'Dominican'	b'NNP'	compound	12	b'COUNTRY'	b' (NNP Dominican)'	1
+0	12	b'Republic'	b'Republic'	b'NNP'	nmod	8	b'COUNTRY'	b' (NNP Republic)))))'	1
+0	13	b'last'	b'last'	b'JJ'	advmod	5	b'O'	b' (ADVP (JJ last))'	1
+0	14	b'week,'	b'week,'	b'IN'	mark	52	b'O'	b' (SBAR (IN week,)'	2
+0	15	b'his'	b'he'	b'PRP$'	nmod:poss	17	b'O'	b' (S (NP (NP (PRP$ his)'	2
+0	16	b'family'	b'family'	b'NN'	compound	17	b'O'	b' (NN family)'	2
+0	17	b'says,'	b'says,'	b'NN'	nsubj:pass	52	b'O'	b' (NN says,))'	2
+0	18	b'making'	b'make'	b'VBG'	acl	17	b'O'	b' (VP (VBG making)'	2
+0	19	b'him'	b'he'	b'PRP'	dep	25	b'O'	b' (S (NP (PRP him))'	2
+0	20	b'at'	b'at'	b'IN'	advmod	25	b'O'	b' (ADVP (IN at)'	2
+0	21	b'least'	b'least'	b'JJS'	fixed	20	b'O'	b' (JJS least))'	2
+0	22	b'the'	b'the'	b'DT'	det	25	b'O'	b' (NP (DT the)'	2
+0	23	b'ninth'	b'ninth'	b'JJ'	amod	25	b'ORDINAL'	b' (JJ ninth)'	2
+0	24	b'US'	b'US'	b'NNP'	compound	25	b'COUNTRY'	b' (NNP US)'	2
+0	25	b'tourist'	b'tourist'	b'NN'	xcomp	18	b'O'	b' (NN tourist)))'	2
+0	26	b'to'	b'to'	b'TO'	mark	27	b'O'	b' (S (VP (TO to)'	2
+0	27	b'die'	b'die'	b'VB'	xcomp	18	b'O'	b' (VP (VB die)'	2
+0	28	b'at'	b'at'	b'IN'	case	32	b'O'	b' (PP (PP (IN at)'	2
+0	29	b'a'	b'a'	b'DT'	det	32	b'O'	b' (NP (DT a)'	2
+0	30	b'Dominican'	b'Dominican'	b'NNP'	compound	32	b'COUNTRY'	b' (NNP Dominican)'	2
+0	31	b'Republic'	b'Republic'	b'NNP'	compound	32	b'COUNTRY'	b' (NNP Republic)'	2
+0	32	b'resort,'	b'resort,'	b'NN'	obl	27	b'O'	b' (NN resort,)))'	2
+0	33	b'or'	b'or'	b'CC'	cc	35	b'O'	b' (CC or)'	2
+0	34	b'after'	b'after'	b'IN'	mark	35	b'O'	b' (PP (IN after)'	2
+0	35	b'becoming'	b'become'	b'VBG'	conj	32	b'O'	b' (S (VP (VBG becoming)'	2
+0	36	b'ill'	b'ill'	b'RB'	advmod	45	b'O'	b' (NP (NP (ADVP (RB ill))'	2
+0	37	b'at'	b'at'	b'IN'	case	38	b'O'	b' (ADVP (IN at)'	2
+0	38	b'one,'	b'one,'	b'RB'	advmod	45	b'O'	b' (ADVP (RB one,))'	2
+0	39	b'over'	b'over'	b'IN'	case	43	b'O'	b' (PP (IN over)'	2
+0	40	b'the'	b'the'	b'DT'	det	43	b'DATE'	b' (NP (DT the)'	2
+0	41	b'past'	b'past'	b'JJ'	amod	43	b'DATE'	b' (JJ past)'	2
+0	42	b'13'	b'13'	b'CD'	nummod	43	b'NUMBER'	b' (CD 13)'	2
+0	43	b'months.'	b'months.'	b'NN'	obl	38	b'O'	b' (NN months.))))'	2
+0	44	b'Joseph'	b'Joseph'	b'NNP'	compound	45	b'PERSON'	b' (NNP Joseph)'	2
+0	45	b'Allen,'	b'Allen,'	b'NNP'	xcomp	35	b'O'	b' (NNP Allen,)'	2
+0	46	b'55,'	b'55,'	b'CD'	nummod	45	b'NUMBER'	b' (CD 55,))'	2
+0	47	b'of'	b'of'	b'IN'	case	50	b'O'	b' (PP (IN of)'	2
+0	48	b'Avenel,'	b'Avenel,'	b'NNP'	compound	50	b'O'	b' (NP (NNP Avenel,)'	2
+0	49	b'New'	b'New'	b'NNP'	compound	50	b'O'	b' (NNP New)'	2
+0	50	b'Jersey,'	b'Jersey,'	b'NNP'	nmod	45	b'O'	b' (NNP Jersey,)))))))))))))'	2
+0	51	b'was'	b'be'	b'VBD'	aux:pass	52	b'O'	b' (VP (VBD was)'	2
+0	52	b'found'	b'find'	b'VBN'	advcl	5	b'O'	b' (VP (VBN found)'	2
+0	53	b'dead'	b'dead'	b'JJ'	xcomp	52	b'O'	b' (S (ADJP (JJ dead)'	2
+0	54	b'June'	b'June'	b'NNP'	obl:tmod	53	b'DATE'	b' (NP-TMP (NNP June)'	2
+0	55	b'13'	b'13'	b'CD'	nummod	54	b'DATE'	b' (CD 13))'	2
+0	56	b'in'	b'in'	b'IN'	case	58	b'O'	b' (PP (IN in)'	2
+0	57	b'his'	b'he'	b'PRP$'	nmod:poss	58	b'O'	b' (NP (NP (PRP$ his)'	2
+0	58	b'room'	b'room'	b'NN'	obl	53	b'O'	b' (NN room))'	2
+0	59	b'at'	b'at'	b'IN'	case	63	b'O'	b' (PP (IN at)'	2
+0	60	b'the'	b'the'	b'DT'	det	63	b'O'	b' (NP (DT the)'	2
+0	61	b'Hotel'	b'Hotel'	b'NNP'	compound	63	b'LOCATION'	b' (NNP Hotel)'	2
+0	62	b'Terra'	b'Terra'	b'NNP'	compound	63	b'LOCATION'	b' (NNP Terra)'	2
+0	63	b'Linda'	b'Linda'	b'NNP'	nmod	58	b'CITY'	b' (NNP Linda)))))))'	2
+0	64	b'in'	b'in'	b'IN'	case	69	b'O'	b' (PP (IN in)'	2
+0	65	b'the'	b'the'	b'DT'	det	69	b'O'	b' (NP (NP (DT the)'	2
+0	66	b'coastal'	b'coastal'	b'JJ'	amod	69	b'O'	b' (JJ coastal)'	2
+0	67	b'Dominican'	b'Dominican'	b'NNP'	compound	69	b'COUNTRY'	b' (NNP Dominican)'	2
+0	68	b'Republic'	b'Republic'	b'NNP'	compound	69	b'COUNTRY'	b' (NNP Republic)'	2
+0	69	b'city'	b'city'	b'NN'	obl	52	b'O'	b' (NN city))'	2
+0	70	b'of'	b'of'	b'IN'	case	71	b'O'	b' (PP (IN of)'	2
+0	71	b'Sosua,'	b'Sosua,'	b'NNP'	nmod	69	b'O'	b' (NP (NNP Sosua,))))))))))))'	2
+0	72	b'his'	b'he'	b'PRP$'	nmod:poss	73	b'O'	b' (NP (PRP$ his)'	2
+0	73	b'sister'	b'sister'	b'NN'	nsubj	76	b'O'	b' (NN sister))'	2
+0	74	b'Jaimie'	b'Jaimie'	b'NNP'	compound	75	b'PERSON'	b' (NP (NNP Jaimie)'	2
+0	75	b'Reed'	b'Reed'	b'NNP'	nsubj	76	b'PERSON'	b' (NNP Reed))'	2
+0	76	b'told'	b'tell'	b'VBD'	root	0	b'O'	b' (VP (VBD told)'	2
+0	77	b'CNN.'	b'CNN.'	b'NNP'	compound	79	b'O'	b' (SBAR (S (NP (NNP CNN.)'	2
+0	78	b'Joseph'	b'Joseph'	b'NNP'	compound	79	b'PERSON'	b' (NNP Joseph)'	2
+0	79	b'Allen'	b'Allen'	b'NNP'	nsubj	80	b'PERSON'	b' (NNP Allen))'	2
+0	80	b'died'	b'die'	b'VBD'	ccomp	76	b'O'	b' (VP (VBD died)'	2
+0	81	b'June'	b'June'	b'NNP'	obl:tmod	80	b'DATE'	b' (NP-TMP (NNP June)'	2
+0	82	b'13'	b'13'	b'CD'	nummod	81	b'DATE'	b' (CD 13))'	2
+0	83	b'after'	b'after'	b'IN'	mark	177	b'O'	b' (SBAR (IN after)'	2
+0	84	b'falling'	b'fall'	b'VBG'	csubj	177	b'O'	b' (S (S (VP (VBG falling)'	2
+0	85	b'ill'	b'ill'	b'RB'	advmod	84	b'O'	b' (ADVP (RB ill))'	2
+0	86	b'in'	b'in'	b'IN'	case	89	b'O'	b' (PP (IN in)'	2
+0	87	b'the'	b'the'	b'DT'	det	89	b'O'	b' (NP (DT the)'	2
+0	88	b'Dominican'	b'Dominican'	b'NNP'	compound	89	b'NATIONALITY'	b' (NNP Dominican)'	2
+0	89	b'Republic,'	b'Republic,'	b'NNP'	obl	84	b'MISC'	b' (NNP Republic,)))'	2
+0	90	b'his'	b'he'	b'PRP$'	nmod:poss	91	b'O'	b' (S (S (NP (PRP$ his)'	2
+0	91	b'family'	b'family'	b'NN'	nsubj	92	b'O'	b' (NN family))'	2
+0	92	b'says.'	b'says.'	b'VBD'	xcomp	84	b'O'	b' (VP (VBD says.)'	2
+0	93	b'Preliminary'	b'preliminary'	b'JJ'	amod	95	b'O'	b' (SBAR (S (NP (JJ Preliminary)'	2
+0	94	b'autopsy'	b'autopsy'	b'JJ'	amod	95	b'O'	b' (JJ autopsy)'	2
+0	95	b'results'	b'result'	b'NNS'	nsubj	96	b'O'	b' (NNS results))'	2
+0	96	b'suggest'	b'suggest'	b'VBP'	ccomp	92	b'O'	b' (VP (VBP suggest)'	2
+0	97	b'that'	b'that'	b'IN'	mark	99	b'O'	b' (SBAR (IN that)'	3
+0	98	b'he'	b'he'	b'PRP'	nsubj	99	b'O'	b' (S (NP (PRP he))'	3
+0	99	b'suffered'	b'suffer'	b'VBD'	ccomp	96	b'O'	b' (VP (VBD suffered)'	3
+0	100	b'from'	b'from'	b'IN'	case	102	b'O'	b' (PP (IN from)'	3
+0	101	b'cardiac'	b'cardiac'	b'JJ'	amod	102	b'O'	b' (NP (JJ cardiac)'	3
+0	102	b'arrest.'	b'arrest.'	b'NN'	obl	99	b'O'	b' (NN arrest.)))'	3
+0	103	b'There'	b'there'	b'EX'	expl	104	b'O'	b' (PRN (S (NP (EX There))'	3
+0	104	b'were'	b'be'	b'VBD'	parataxis	99	b'O'	b' (VP (VBD were)'	3
+0	105	b'no'	b'no'	b'DT'	det	106	b'O'	b' (NP (NP (DT no)'	3
+0	106	b'signs'	b'sign'	b'NNS'	nsubj	104	b'O'	b' (NNS signs))'	3
+0	107	b'of'	b'of'	b'IN'	case	108	b'O'	b' (PP (IN of)'	3
+0	108	b'violence,'	b'violence,'	b'NN'	nmod	106	b'O'	b' (NP (NN violence,))))'	3
+0	109	b'according'	b'accord'	b'VBG'	case	112	b'O'	b' (PP (VBG according)'	3
+0	110	b'to'	b'to'	b'IN'	fixed	109	b'O'	b' (PP (IN to)'	3
+0	111	b'the'	b'the'	b'DT'	det	112	b'O'	b' (NP (NP (DT the)'	3
+0	112	b'report,'	b'report,'	b'NN'	obl	104	b'O'	b' (NN report,))'	3
+0	113	b'which'	b'which'	b'WDT'	obj	116	b'O'	b' (SBAR (WHNP (WDT which))'	3
+0	114	b'Dominican'	b'Dominican'	b'NNP'	compound	115	b'NATIONALITY'	b' (S (NP (NNP Dominican)'	3
+0	115	b'authorities'	b'authority'	b'NNS'	nsubj	116	b'O'	b' (NNS authorities))'	3
+0	116	b'provided'	b'provide'	b'VBD'	acl:relcl	112	b'O'	b' (VP (VBD provided)'	3
+0	117	b'to'	b'to'	b'IN'	case	119	b'O'	b' (PP (IN to)'	3
+0	118	b'CNN.'	b'CNN.'	b'NNP'	compound	119	b'O'	b' (NP (NNP CNN.)'	3
+0	119	b"Allen's"	b"Allen's"	b'NNPS'	obl	116	b'O'	b" (NNPS Allen's))))))))))))"	3
+0	120	b'family'	b'family'	b'NN'	nsubj	121	b'O'	b' (S (NP (NN family))'	3
+0	121	b"doesn't"	b"doesn't"	b'VB'	ccomp	99	b'O'	b" (VP (VB doesn't)"	3
+0	122	b'know'	b'know'	b'VB'	xcomp	121	b'O'	b' (VP (VB know)'	4
+0	123	b'what'	b'what'	b'WP'	nsubj	124	b'O'	b' (SBAR (WHNP (WP what))'	4
+0	124	b'caused'	b'cause'	b'VBD'	ccomp	122	b'O'	b' (S (VP (VP (VBD caused)'	4
+0	125	b'his'	b'he'	b'PRP$'	nmod:poss	126	b'O'	b' (NP (PRP$ his)'	4
+0	126	b'death.'	b'death.'	b'NN'	obj	124	b'O'	b' (NN death.))'	4
+0	127	b'He'	b'he'	b'PRP'	nsubj	129	b'O'	b' (SBAR (S (NP (PRP He))'	4
+0	128	b'was'	b'be'	b'VBD'	aux	129	b'O'	b' (VP (VBD was)'	4
+0	129	b'traveling'	b'travel'	b'VBG'	dep	124	b'O'	b' (VP (VBG traveling)'	4
+0	130	b'with'	b'with'	b'IN'	case	131	b'O'	b' (PP (IN with)'	4
+0	131	b'friends,'	b'friends,'	b'NN'	obl	129	b'O'	b' (NP (NN friends,))))))))'	4
+0	132	b'and'	b'and'	b'CC'	cc	134	b'O'	b' (CC and)'	4
+0	133	b'had'	b'have'	b'VBD'	aux	134	b'O'	b' (VP (VBD had)'	4
+0	134	b'stayed'	b'stay'	b'VBN'	conj	124	b'O'	b' (VP (VBN stayed)'	4
+0	135	b'at'	b'at'	b'IN'	case	138	b'O'	b' (PP (IN at)'	4
+0	136	b'the'	b'the'	b'DT'	det	138	b'O'	b' (NP (DT the)'	4
+0	137	b'same'	b'same'	b'JJ'	amod	138	b'O'	b' (JJ same)'	4
+0	138	b'resort'	b'resort'	b'NN'	obl	134	b'O'	b' (NN resort)))))))))))))))))))'	4
+0	139	b'many'	b'many'	b'JJ'	amod	141	b'O'	b' (FRAG (NP (JJ many)'	4
+0	140	b'other'	b'other'	b'JJ'	amod	141	b'O'	b' (JJ other)'	4
+0	141	b'times'	b'time'	b'NNS'	parataxis	92	b'O'	b' (NNS times))'	4
+0	142	b'before,'	b'before,'	b'JJ'	dep	141	b'O'	b' (ADJP (JJ before,))'	4
+0	143	b'Reed'	b'Reed'	b'NNP'	compound	145	b'O'	b' (SBAR (S (NP (NP (NNP Reed)'	4
+0	144	b'said.'	b'said.'	b'NNP'	compound	145	b'O'	b' (NNP said.)'	4
+0	145	b"Allen's"	b"Allen's"	b'NNPS'	nsubj	162	b'O'	b" (NNPS Allen's))"	4
+0	146	b'friends'	b'friend'	b'NNS'	nsubj	148	b'O'	b' (SBAR (S (NP (NNS friends))'	4
+0	147	b'have'	b'have'	b'VBP'	aux	148	b'O'	b' (VP (VBP have)'	4
+0	148	b'told'	b'tell'	b'VBN'	acl:relcl	145	b'O'	b' (VP (VBN told)'	4
+0	149	b'the'	b'the'	b'DT'	det	150	b'O'	b' (NP (DT the)'	4
+0	150	b'family'	b'family'	b'NN'	obj	148	b'O'	b' (NN family))'	4
+0	151	b'that'	b'that'	b'IN'	mark	153	b'O'	b' (SBAR (IN that)'	5
+0	152	b'he'	b'he'	b'PRP'	nsubj	153	b'O'	b' (S (NP (PRP he))'	5
+0	153	b'complained'	b'complain'	b'VBD'	ccomp	148	b'O'	b' (VP (VBD complained)'	5
+0	154	b'about'	b'about'	b'IN'	mark	156	b'O'	b' (PP (IN about)'	6
+0	155	b'not'	b'not'	b'RB'	advmod	156	b'O'	b' (S (RB not)'	6
+0	156	b'feeling'	b'feel'	b'VBG'	advcl	153	b'O'	b' (VP (VBG feeling)'	6
+0	157	b'well'	b'well'	b'RB'	advmod	156	b'O'	b' (ADVP (RB well))'	6
+0	158	b'last'	b'last'	b'JJ'	amod	161	b'O'	b' (NP (JJ last)'	6
+0	159	b'Wednesday.'	b'Wednesday.'	b'NNP'	compound	160	b'O'	b' (NML (NNP Wednesday.)'	6
+0	160	b'Hotel'	b'Hotel'	b'NNP'	compound	161	b'O'	b' (NNP Hotel))'	6
+0	161	b'staff'	b'staff'	b'NN'	obj	156	b'O'	b' (NN staff)))))))))))))'	6
+0	162	b'found'	b'find'	b'VBD'	dep	141	b'O'	b' (VP (VBD found)'	6
+0	163	b'him'	b'he'	b'PRP'	nsubj	164	b'O'	b' (S (NP (PRP him))'	6
+0	164	b'dead'	b'dead'	b'JJ'	xcomp	162	b'O'	b' (ADJP (JJ dead)'	6
+0	165	b'in'	b'in'	b'IN'	case	167	b'O'	b' (PP (IN in)'	6
+0	166	b'his'	b'he'	b'PRP$'	nmod:poss	167	b'O'	b' (NP (PRP$ his)'	6
+0	167	b'room'	b'room'	b'NN'	obl	164	b'O'	b' (NN room)))))'	6
+0	168	b'early'	b'early'	b'RB'	advmod	162	b'DATE'	b' (ADVP (RB early))'	6
+0	169	b'Thursday'	b'Thursday'	b'NNP'	obl:tmod	162	b'DATE'	b' (NP-TMP (NNP Thursday))'	6
+0	170	b'after'	b'after'	b'IN'	mark	172	b'O'	b' (SBAR (IN after)'	7
+0	171	b'friends'	b'friend'	b'NNS'	nsubj	172	b'O'	b' (S (NP (NNS friends))'	7
+0	172	b'expressed'	b'express'	b'VBD'	advcl	162	b'O'	b' (VP (VBD expressed)'	7
+0	173	b'concern'	b'concern'	b'NN'	obj	172	b'O'	b' (NP (NN concern))'	8
+0	174	b'that'	b'that'	b'IN'	mark	176	b'O'	b' (SBAR (IN that)'	9
+0	175	b'he'	b'he'	b'PRP'	nsubj	176	b'O'	b' (S (NP (PRP he))'	9
+0	176	b"hadn't"	b"hadn't"	b'VB'	ccomp	172	b'O'	b" (VP (VB hadn't))))))))))))))"	9
+0	177	b'met'	b'meet'	b'VBD'	advcl	80	b'O'	b' (VP (VBD met)'	9
+0	178	b'up'	b'up'	b'RP'	compound:prt	177	b'O'	b' (PRT (RP up))'	9
+0	179	b'with'	b'with'	b'IN'	case	180	b'O'	b' (PP (IN with)'	9
+0	180	b'them'	b'they'	b'PRP'	obl	177	b'O'	b' (NP (PRP them)))'	9
+0	181	b'that'	b'that'	b'IN'	mark	184	b'O'	b' (SBAR (IN that)'	9
+0	182	b'morning,'	b'morning,'	b'NNP'	compound	183	b'O'	b' (S (NP (NNP morning,)'	9
+0	183	b'Reed'	b'Reed'	b'NNP'	nsubj	184	b'O'	b' (NNP Reed))'	9
+0	184	b'said.'	b'said.'	b'VBD'	ccomp	177	b'O'	b' (VP (VBD said.)'	9
+0	185	b'The'	b'the'	b'DT'	det	188	b'O'	b' (SBAR (S (NP (DT The)'	9
+0	186	b'US'	b'US'	b'NNP'	compound	188	b'ORGANIZATION'	b' (NNP US)'	9
+0	187	b'State'	b'State'	b'NNP'	compound	188	b'ORGANIZATION'	b' (NNP State)'	9
+0	188	b'Department'	b'Department'	b'NNP'	nsubj	189	b'ORGANIZATION'	b' (NNP Department))'	9
+0	189	b'confirmed'	b'confirm'	b'VBD'	ccomp	184	b'O'	b' (VP (VBD confirmed)'	9
+0	190	b'the'	b'the'	b'DT'	det	191	b'O'	b' (NP (DT the)'	9
+0	191	b'death.'	b'death.'	b'NN'	obj	189	b'O'	b' (NN death.)))))))))))))))))'	9
+

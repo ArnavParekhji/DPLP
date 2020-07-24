@@ -3,8 +3,9 @@
 ## Date: 08-29-2014
 ## Time-stamp: <yangfeng 09/24/2015 16:21:12>
 
-from util import getgrams, getbc
-from cPickle import load
+from code.util import getgrams, getbc
+# from cPickle import load
+from pickle import load
 import gzip
 
 class FeatureGenerator(object):

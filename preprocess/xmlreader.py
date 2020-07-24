@@ -141,9 +141,9 @@ def combineparse2sent(sent, parse):
         parselist[tidx] += (" " + item)
         partialparse = parselist[tidx].replace(' ','')
         partialparse = partialparse.encode("ascii", "ignore")
-        word = tokenlist[tidx].replace(' ','')
+        word = tokenlist[tidx].replace(b' ',b'')
         # print word, partialparse
-        if (word + ')') in partialparse:
+        if (word + b')') in partialparse:
             tidx += 1
     # Attach to sent
     for (tidx, token) in enumerate(sent.tokenlist):
@@ -164,13 +164,13 @@ def combine(sentlist, constlist):
 
         
 def writer(sentlist, fconll):
-    with open(fconll, 'w') as fout:
+    with open(fconll, 'wb') as fout:
         for sent in sentlist:
             for token in sent.tokenlist:
-                line = str(sent.idx) + '\t' + str(token.idx) + '\t' + token.word + '\t' + token.lemma + '\t' + str(token.pos) + '\t' + str(token.deptype) + '\t' + str(token.headidx) + '\t' + str(token.nertype) + '\t' + str(token.partialparse) + '\n'
+                line = str(sent.idx) + '\t' + str(token.idx) + '\t' + str(token.word) + '\t' + str(token.lemma) + '\t' + str(token.pos) + '\t' + str(token.deptype) + '\t' + str(token.headidx) + '\t' + str(token.nertype) + '\t' + str(token.partialparse) + '\n'
                 line = line.encode('ascii', 'ignore')
                 fout.write(line)
-            fout.write('\n')
+            fout.write(b'\n')
 
 
 if __name__ == '__main__':

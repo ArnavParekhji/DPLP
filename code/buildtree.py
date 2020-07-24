@@ -3,8 +3,8 @@
 ## Date: 09-10-2014
 ## Time-stamp: <yangfeng 09/25/2015 16:44:42>
 
-from datastructure import *
-from util import extractrelation
+from code.datastructure import *
+from code.util import extractrelation
 
 def BFT(tree):
     """ Breadth-first treavsal on general RST tree
@@ -309,8 +309,8 @@ def __getspaninfo(lnode, rnode):
     try:
         eduspan = (lnode.eduspan[0], rnode.eduspan[1])
     except TypeError:
-        print lnode.prop, rnode.prop
-        print lnode.nucspan, rnode.nucspan
+        print(lnode.prop, rnode.prop)
+        print(lnode.nucspan, rnode.nucspan)
     return eduspan
 
 
@@ -347,8 +347,8 @@ def __getrelationinfo(lnode, rnode):
     elif (lnode.prop=='Satellite') and (rnode.prop=='Nucleus'):
         relation = rnode.relation
     else:
-        print 'lnode.prop = {}, lnode.eduspan = {}'.format(lnode.prop, lnode.eduspan)
-        print 'rnode.prop = {}, lnode.eduspan = {}'.format(rnode.prop, rnode.eduspan)
+        print('lnode.prop = {}, lnode.eduspan = {}'.format(lnode.prop, lnode.eduspan))
+        print('rnode.prop = {}, lnode.eduspan = {}'.format(rnode.prop, rnode.eduspan))
         raise ValueError("Error when find relation for new node")
     return relation
 

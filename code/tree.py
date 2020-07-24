@@ -13,12 +13,12 @@
 - YJ
 """
 
-from datastructure import *
-from buildtree import *
-from docreader import DocReader
-from feature import FeatureGenerator
-from parser import SRParser
-from util import extractrelation
+from code.datastructure import *
+from code.buildtree import *
+from code.docreader import DocReader
+from code.feature import FeatureGenerator
+from code.parser import SRParser
+from code.util import extractrelation
 from os.path import isfile
 
 
@@ -133,7 +133,7 @@ def test():
     rst = RSTTree(fdis, fmerge)
     rst.build()
     strparse = rst.parse()
-    print strparse
+    print(strparse)
     # actionlist, samplelist = rst.generate_samples()
     # print actionlist
     # print samplelist
