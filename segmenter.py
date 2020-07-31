@@ -2,6 +2,7 @@
 """
 
 import discoseg.buildedu as buildedu
+# import discoseg.get_edus as buildedu
 from sys import argv
 
 def main(readpath, writepath):

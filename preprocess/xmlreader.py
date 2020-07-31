@@ -164,13 +164,13 @@ def combine(sentlist, constlist):
 
         
 def writer(sentlist, fconll):
-    with open(fconll, 'wb') as fout:
+    with open(fconll, 'w') as fout:
         for sent in sentlist:
             for token in sent.tokenlist:
-                line = str(sent.idx) + '\t' + str(token.idx) + '\t' + str(token.word) + '\t' + str(token.lemma) + '\t' + str(token.pos) + '\t' + str(token.deptype) + '\t' + str(token.headidx) + '\t' + str(token.nertype) + '\t' + str(token.partialparse) + '\n'
-                line = line.encode('ascii', 'ignore')
+                line = str(sent.idx) + '\t' + str(token.idx) + '\t' + token.word.decode("utf-8") + '\t' + token.lemma.decode("utf-8") + '\t' + token.pos.decode("utf-8") + '\t' + str(token.deptype) + '\t' + str(token.headidx) + '\t' + token.nertype.decode("utf-8") + '\t' + token.partialparse.decode("utf-8") + '\n'
+                # line = line.encode('ascii', 'ignore')
                 fout.write(line)
-            fout.write(b'\n')
+            fout.write('\n')
 
 
 if __name__ == '__main__':
