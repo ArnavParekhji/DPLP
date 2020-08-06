@@ -8,6 +8,8 @@ from sklearn.preprocessing import normalize
 from nltk import Tree
 from nltk.draw.util import CanvasFrame
 from nltk.draw import TreeWidget
+import json
+import streamlit as st
 
 def label2action(label):
     """ Transform label to action
@@ -172,6 +174,18 @@ def getbc(eduidx, edudict, tokendict, bcvocab, nprefix=5):
     return bcfeatures
 
 
+def tree_to_dict(tree):
+    tdict = {}
+    for t in tree:
+        if isinstance(t, Tree) and isinstance(t[0], Tree):
+            tdict[t.label()] = tree_to_dict(t)
+        elif isinstance(t, Tree):
+            tdict[t.label()] = t[0]
+    return tdict
+
+def dict_to_json(d):
+    return json.dumps(d)
+
 def drawrst(strtree, fname):
     """ Draw RST tree into a file
     """
@@ -179,6 +193,8 @@ def drawrst(strtree, fname):
         fname += ".ps"
     cf = CanvasFrame()
     t = Tree.fromstring(strtree)
+    output_json = dict_to_json({t.label(): tree_to_dict(t)})
+    st.json(output_json)
     tc = TreeWidget(cf.canvas(), t)
     cf.add_widget(tc,10,10) # (10,10) offsets
     cf.print_to_file(fname)
