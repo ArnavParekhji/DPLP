@@ -10,6 +10,8 @@ from nltk.draw.util import CanvasFrame
 from nltk.draw import TreeWidget
 import json
 import streamlit as st
+import re
+from conll_df import conll_df
 
 def label2action(label):
     """ Transform label to action
@@ -173,18 +175,44 @@ def getbc(eduidx, edudict, tokendict, bcvocab, nprefix=5):
             pass
     return bcfeatures
 
-
-def tree_to_dict(tree):
-    tdict = {}
-    for t in tree:
-        if isinstance(t, Tree) and isinstance(t[0], Tree):
-            tdict[t.label()] = tree_to_dict(t)
-        elif isinstance(t, Tree):
-            tdict[t.label()] = t[0]
-    return tdict
+def tree2dict(tree):
+    return {tree.label(): [tree2dict(t)  if isinstance(t, Tree) else t
+                        for t in tree]}
 
 def dict_to_json(d):
     return json.dumps(d)
+
+def get_edus_from_no(edu_no, fname):
+    fname = fname.replace(".ps", ".merge")
+    df = conll_df(fname, file_index = False)
+    d = df.loc[df["c"] == edu_no]
+    edu = ""
+    for index, row in d.iterrows():
+        edu += row["l"] + " "
+    edu = edu.rstrip()
+    return edu
+
+def replace_numbers(string, fname):
+    # f = open("st.txt", "r")
+    # string = f.read()
+    x = [m.start() for m in re.finditer("\"EDU\": ", string)]
+    new_json = string[0:x[0]+9]
+    for i, n in enumerate(x):
+        start = n+9
+        end = start
+        val = string[end]
+        edu = ""
+        while val.isnumeric():
+            edu += val
+            end += 1
+            val = string[end]
+        rep = get_edus_from_no(int(edu), fname)
+        if i != len(x)-1:
+            new_json += rep + string[end:x[i+1]+9]
+        else:
+            new_json += rep + string[end:len(string)]
+    return new_json
+
 
 def drawrst(strtree, fname):
     """ Draw RST tree into a file
@@ -193,8 +221,10 @@ def drawrst(strtree, fname):
         fname += ".ps"
     cf = CanvasFrame()
     t = Tree.fromstring(strtree)
-    output_json = dict_to_json({t.label(): tree_to_dict(t)})
-    st.json(output_json)
+    tx = tree2dict(t)
+    output_json = dict_to_json(tx)
+    new_json = replace_numbers(output_json, fname)
+    st.json(new_json)
     tc = TreeWidget(cf.canvas(), t)
     cf.add_widget(tc,10,10) # (10,10) offsets
     cf.print_to_file(fname)
