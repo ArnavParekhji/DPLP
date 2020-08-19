@@ -192,13 +192,42 @@ def get_edus_from_no(edu_no, fname):
     edu = edu.rstrip()
     return edu
 
+# def replace_numbers(string, fname):
+#     # f = open("st.txt", "r")
+#     # string = f.read()
+#     x = [m.start() for m in re.finditer("\"EDU\": ", string)]
+#     new_json = string[0:x[0]+9]
+#     for i, n in enumerate(x):
+#         start = n+9
+#         end = start
+#         val = string[end]
+#         edu = ""
+#         while val.isnumeric():
+#             edu += val
+#             end += 1
+#             val = string[end]
+#         rep = get_edus_from_no(int(edu), fname)
+#         if i != len(x)-1:
+#             new_json += rep + string[end:x[i+1]+9]
+#         else:
+#             new_json += rep + string[end:len(string)]
+#     return new_json
+
+
 def replace_numbers(string, fname):
-    # f = open("st.txt", "r")
-    # string = f.read()
-    x = [m.start() for m in re.finditer("\"EDU\": ", string)]
-    new_json = string[0:x[0]+9]
+
+    def remove(my_str):
+        punctuations = "()"
+        no_punct = ""
+        for char in my_str:
+            if char not in punctuations:
+                no_punct = no_punct + char
+        return no_punct
+
+    x = [m.start() for m in re.finditer("\(EDU ", string)]
+    new_string = string[0:x[0]]
     for i, n in enumerate(x):
-        start = n+9
+        start = n+5
         end = start
         val = string[end]
         edu = ""
@@ -208,11 +237,10 @@ def replace_numbers(string, fname):
             val = string[end]
         rep = get_edus_from_no(int(edu), fname)
         if i != len(x)-1:
-            new_json += rep + string[end:x[i+1]+9]
+            new_string += "\"" + rep + "\"" + string[end+1:x[i+1]]
         else:
-            new_json += rep + string[end:len(string)]
-    return new_json
-
+            new_string += "\"" + rep + "\"" + string[end+1:len(string)]
+    return remove(new_string)
 
 def drawrst(strtree, fname):
     """ Draw RST tree into a file
@@ -221,11 +249,15 @@ def drawrst(strtree, fname):
         fname += ".ps"
     cf = CanvasFrame()
     t = Tree.fromstring(strtree)
-    tx = tree2dict(t)
-    output_json = dict_to_json(tx)
-    new_json = replace_numbers(output_json, fname)
-    st.json(new_json)
+    # tx = tree2dict(t)
+    # output_json = dict_to_json(tx)
+    # new_json = replace_numbers(output_json, fname)
+    # st.json(new_json)
     tc = TreeWidget(cf.canvas(), t)
+    tx = str(t)
+    st.text(replace_numbers(tx, fname))
+    # for i, line in enumerate(tx.split("\n")):
+    #     st.text(str(i) + line)
     cf.add_widget(tc,10,10) # (10,10) offsets
-    cf.print_to_file(fname)
+    # cf.print_to_file(fname)
     cf.destroy()
