@@ -17,7 +17,7 @@ The last two packages are required to draw the RST tree structure in the PostScr
 
 ## 2. To run entire project together ##
 
-Run the command "*python run.py "dplp" "tree"*"
+Run the command " **python run.py "dplp" "tree"** "
 
 First argument allows you to choose between using EDUs from DPLP or NeuralEDUSeg. To use NeuralEDUSeg EDUs, clone the repo github.com/ArnavParekhji/NeuralEDUSeg and place it in same folder as DPLP. Run by replacing "dplp" with "neu".
 
