@@ -40,7 +40,7 @@ def writebrackets(fname, brackets):
             fout.write(str(item) + '\n')
 
 
-def eval_parser_unit(fmerge, bcvocab=None, pm=None, draw=False):
+def eval_parser_unit(fmerge, bcvocab=None, pm=None, draw=False, mode="tree"):
     bcvocab = global_bv
     pm = global_pm
     assert bcvocab is not None
@@ -52,7 +52,7 @@ def eval_parser_unit(fmerge, bcvocab=None, pm=None, draw=False):
     pred_rst = pm.sr_parse(doc, bcvocab)
     if draw:
         strtree = pred_rst.parse()
-        drawrst(strtree, fmerge.replace(".merge", ".ps"))
+        drawrst(strtree, fmerge.replace(".merge", ".ps"), mode)
     # Get brackets from parsing results
     pred_brackets = pred_rst.bracketing()
     fbrackets = fmerge.replace('.merge', '.brackets')
@@ -71,7 +71,7 @@ def eval_parser_unit(fmerge, bcvocab=None, pm=None, draw=False):
 
 def evalparser(path='./examples', report=False,
                bcvocab=None, draw=True,
-               withdp=False, fdpvocab=None, fprojmat=None):
+               withdp=False, fdpvocab=None, fprojmat=None, mode="tree"):
     """ Test the parsing performance
 
     :type path: string
@@ -104,7 +104,7 @@ def evalparser(path='./examples', report=False,
     global_bv = bcvocab
     # eval_parser_unit(doclist[0])
     for d in doclist:
-        eval_parser_unit(d, bcvocab, pm, True)
+        eval_parser_unit(d, bcvocab, pm, True, mode)
     # cnt = multiprocessing.cpu_count()
 
     # pool = multiprocessing.Pool(processes=cnt)
